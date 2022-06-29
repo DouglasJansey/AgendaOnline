@@ -3,7 +3,7 @@ require("dotenv").config({path:'.env'});
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const connectDB = process.env.CONNECT_DB;
+const connectDB =  process.env.CONNECT_DB;
 const connectServer = connectDB;
 
 mongoose.connect(connectServer, 
