@@ -1,0 +1,64 @@
+<%- include('includes/head') %>
+  <%- include('includes/nav') %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 my-3">
+          <h1 class="text-center">Criar conta ou Entrar</h1>
+          <p class="text-center lead">
+            Faça login ou crie sua conta abaixo
+          </p>
+          <%- include('includes/messages'); %>
+          <div class="row">
+            <div class="col-lg" >
+              <h4>Faça seu cadastro</h4>
+              <p>Se você não tem uma conta, preencha o formulário abaixo</p>
+
+              <form class="form-cadastro" action="/login/register" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
+                <div class="mb-3">
+                  <label>Seu email</label>
+                  <input type="email" class="form-control" name="email" />
+                  <h6 class="text-center emailCadastro"></h6>
+                  
+                </div>
+                <div class="mb-3">
+                  <label>Sua senha</label>
+                  <input type="password" class="form-control" name="password" />
+                  <h6 class="text-center passwordCadastro"></h6>
+                </div>
+                <button type="submit" class="btn btn-primary">Criar conta</button>
+              </form>
+            </div>
+            <div class="col-lg">
+              <h4>Faça seu login</h4>
+              <p>Se você já tem uma conta, faça seu login</p>
+              <form class="form-login" action="/login/login" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
+                <div class="mb-3">
+                  <label>Seu email</label>
+                  <input type="email" class="form-control" name="email"/>
+                  <h6 class="text-center emailLogin"></h6>
+                </div>
+                <div class="mb-3">
+                  <label>Seu senha</label>
+                  <input type="password" class="form-control" name="password"/>
+                  <h6 class="text-center passwordLogin"></h6>
+
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="responsive-table">
+
+          </div>
+        </div>
+        <div class="col-lg-2"></div>
+      </div>
+
+    </div>
+
+    <%- include('includes/footer') %>
